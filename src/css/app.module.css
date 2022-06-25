@@ -16,8 +16,3 @@
   font-size: 5rem;
   color: var(--font-color-primary);
 }
-
-.slotContainer {
-  display: flex;
-  justify-content: space-between;
-}

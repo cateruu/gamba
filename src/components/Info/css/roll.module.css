@@ -1,0 +1,18 @@
+.container {
+  height: 100%;
+  width: 130px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--font-color-text);
+  font-size: 2rem;
+}
+
+.roll {
+  font-size: 5rem;
+  cursor: pointer;
+}
+
+.amount {
+  cursor: pointer;
+}

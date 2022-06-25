@@ -5,11 +5,11 @@ import Cylinder from './Cylinder';
 
 const Slot = () => {
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <Cylinder />
       <Cylinder />
       <Cylinder />
-    </div>
+    </section>
   );
 };
 

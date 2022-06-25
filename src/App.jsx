@@ -1,14 +1,16 @@
 // styles
 import classes from './css/app.module.css';
 // components
-import Slot from './components/Slot';
+import Slot from './components/Slot/Slot';
+import Info from './components/Info/Info';
 
 const App = () => {
   return (
-    <div className={classes.main}>
+    <main className={classes.main}>
       <h1 className={classes.header}>GAMBA</h1>
       <Slot />
-    </div>
+      <Info />
+    </main>
   );
 };
 

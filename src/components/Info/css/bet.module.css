@@ -1,0 +1,8 @@
+.bet {
+  font-size: 1.2rem;
+  color: var(--font-color-primary);
+}
+
+.amount {
+  color: var(--font-color-text);
+}

@@ -1,0 +1,10 @@
+.credit {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--font-color-primary);
+}
+
+.amount {
+  color: var(--font-color-text);
+  font-weight: 400;
+}

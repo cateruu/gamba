@@ -2,9 +2,9 @@
 import classes from './css/cylinder.module.css';
 // utils
 import images from '../../utils/images.json';
+import { shuffle } from '../../utils/shuffle';
 
 const Cylinder = () => {
-  console.log(images);
   const imagesElements = images.map((image, id) => {
     return (
       <img
@@ -16,7 +16,7 @@ const Cylinder = () => {
     );
   });
 
-  return <div className={classes.cylinder}>{imagesElements}</div>;
+  return <div className={classes.cylinder}>{shuffle(imagesElements)}</div>;
 };
 
 export default Cylinder;

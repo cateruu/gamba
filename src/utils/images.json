@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "apple",
+    "path": "images/apple.svg"
+  },
+  {
+    "id": 2,
+    "name": "cherry",
+    "path": "images/cherry.svg"
+  },
+  {
+    "id": 3,
+    "name": "diamond",
+    "path": "images/diamond.svg"
+  },
+  {
+    "id": 4,
+    "name": "grape",
+    "path": "images/grape.svg"
+  },
+  {
+    "id": 5,
+    "name": "heart",
+    "path": "images/heart.svg"
+  },
+  {
+    "id": 6,
+    "name": "orange",
+    "path": "images/orange.svg"
+  },
+  {
+    "id": 7,
+    "name": "seven",
+    "path": "images/seven.svg"
+  }
+]

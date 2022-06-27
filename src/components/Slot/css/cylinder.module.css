@@ -7,4 +7,14 @@
     rgba(255, 255, 255, 0.9) 50%,
     #9b9b9b 100%
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 50%;
+  margin: 25px 0;
 }

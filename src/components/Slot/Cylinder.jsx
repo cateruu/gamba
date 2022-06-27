@@ -5,7 +5,7 @@ import images from '../../utils/images.json';
 import { shuffle } from '../../utils/shuffle';
 
 const Cylinder = () => {
-  const imagesElements = images.map((image, id) => {
+  const symbols = images.map((image, id) => {
     return (
       <img
         key={id}
@@ -16,7 +16,7 @@ const Cylinder = () => {
     );
   });
 
-  return <div className={classes.cylinder}>{shuffle(imagesElements)}</div>;
+  return <div className={classes.cylinder}>{shuffle(symbols)}</div>;
 };
 
 export default Cylinder;

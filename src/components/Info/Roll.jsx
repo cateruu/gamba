@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 // context
-import { RollState } from '../../App';
+import { RollContext } from '../../App';
 // styles
 import classes from './css/roll.module.css';
 // font awesome
@@ -8,9 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
 
 const Roll = () => {
-  const setIsRolling = useContext(RollState);
+  const { setIsRolling } = useContext(RollContext);
   const roll = () => {
-    setIsRolling((prevState) => !prevState);
+    setIsRolling(true);
+
+    setTimeout(() => setIsRolling(false), 700);
   };
 
   return (

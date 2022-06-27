@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+// context
+import { RollContext } from '../../App';
 // styles
 import classes from './css/cylinder.module.css';
 // utils
@@ -5,6 +8,8 @@ import images from '../../utils/images.json';
 import { shuffle } from '../../utils/shuffle';
 
 const Cylinder = () => {
+  const { isRolling } = useContext(RollContext);
+
   const symbols = images.map((image, id) => {
     return (
       <img
@@ -16,7 +21,15 @@ const Cylinder = () => {
     );
   });
 
-  return <div className={classes.cylinder}>{shuffle(symbols)}</div>;
+  return (
+    <div className={classes.cylinder}>
+      <div
+        className={`${classes.container} ${isRolling ? classes.roll : null}`}
+      >
+        {shuffle(symbols)}
+      </div>
+    </div>
+  );
 };
 
 export default Cylinder;

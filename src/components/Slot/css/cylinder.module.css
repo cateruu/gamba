@@ -7,14 +7,91 @@
     rgba(255, 255, 255, 0.9) 50%,
     #9b9b9b 100%
   );
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  position: relative;
 }
 
 .image {
   width: 50%;
   margin: 20px 0;
+}
+
+.roll {
+  animation: roll 0.7s;
+}
+
+@keyframes roll {
+  0% {
+    top: 0;
+  }
+  9% {
+    top: 100%;
+  }
+  10% {
+    top: 0;
+  }
+  19% {
+    top: 100%;
+  }
+  20% {
+    top: 0;
+  }
+  29% {
+    top: 100%;
+  }
+  30% {
+    top: 0;
+  }
+  39% {
+    top: 100%;
+  }
+  40% {
+    top: 0;
+  }
+  49% {
+    top: 100%;
+  }
+  50% {
+    top: 0;
+  }
+  59% {
+    top: 100%;
+  }
+  60% {
+    top: 0;
+  }
+  69% {
+    top: 100%;
+  }
+  70% {
+    top: 0;
+  }
+  79% {
+    top: 100%;
+  }
+  80% {
+    top: 0;
+  }
+  89% {
+    top: 100%;
+  }
+  90% {
+    top: 0;
+  }
+  99% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
 }

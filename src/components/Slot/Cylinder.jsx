@@ -7,8 +7,8 @@ import classes from './css/cylinder.module.css';
 import images from '../../utils/images.json';
 import { shuffle } from '../../utils/shuffle';
 
-const Cylinder = () => {
-  const { isRolling } = useContext(RollContext);
+const Cylinder = (props) => {
+  const { isRolling, cylinders } = useContext(RollContext);
 
   const symbols = images.map((image, id) => {
     return (
@@ -20,13 +20,20 @@ const Cylinder = () => {
       />
     );
   });
+  shuffle(symbols);
+
+  let symbolElements = [];
+  for (let i = 0; i < 3; i++) {
+    symbolElements.push(symbols[i]);
+  }
 
   return (
     <div className={classes.cylinder}>
       <div
         className={`${classes.container} ${isRolling ? classes.roll : null}`}
+        ref={cylinders[props.id]}
       >
-        {shuffle(symbols)}
+        {isRolling ? symbols : symbolElements}
       </div>
     </div>
   );

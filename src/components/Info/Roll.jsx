@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
 
 const Roll = () => {
-  const { setIsRolling } = useContext(RollContext);
+  const { isRolling, setIsRolling } = useContext(RollContext);
   const roll = () => {
     setIsRolling(true);
 
@@ -21,7 +21,7 @@ const Roll = () => {
       <FontAwesomeIcon
         icon={faRotate}
         className={classes.roll}
-        onClick={roll}
+        onClick={isRolling ? null : roll}
       />
       <span className={classes.amount}>+</span>
     </div>

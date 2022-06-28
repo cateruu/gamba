@@ -1,41 +1,34 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 // styles
 import classes from './css/app.module.css';
 // components
 import Slot from './components/Slot/Slot';
 import Info from './components/Info/Info';
+// utils
+import { getSymbolsArr } from './utils/getSymbolsArr';
+import { getSymbolsCount } from './utils/getSymbolsCount';
 
 export const RollContext = React.createContext();
 
 const App = () => {
   const [isRolling, setIsRolling] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const cylinders = [useRef(), useRef(), useRef()];
-  const [winSymbol, setWinSymbol] = useState(null);
-
-  // if (cylinders[0].current !== undefined) {
-  //   const children = cylinders[0].current.children;
-  // }
+  const winSymbols = useRef(null);
 
   useEffect(() => {
-    const cylindersArr = cylinders.map((cylinder) => {
-      const cylindersArr = Array.from(cylinder.current.children);
+    const cylindersArr = getSymbolsArr(cylinders);
+    const symbols = getSymbolsCount(cylindersArr);
 
-      return cylindersArr.map((symbol) => symbol.alt);
-    });
-
-    let symbols = {};
-    for (let cylinder of cylindersArr) {
-      for (let symbol of cylinder) {
-        if (symbol in symbols) {
-          symbols[symbol] += 1;
-        } else {
-          symbols[symbol] = 1;
-        }
-      }
+    let win = [];
+    for (let [key, value] of Object.entries(symbols)) {
+      if (value === 3) win.push(key);
     }
 
-    console.log(symbols);
+    winSymbols.current = win;
   }, [cylinders]);
+
+  console.log(winSymbols);
 
   return (
     <main className={classes.main}>

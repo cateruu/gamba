@@ -10,7 +10,7 @@ export const win = (winSymbols, betAmount) => {
 };
 
 const symbolValue = {
-  apple: 0.75,
+  apple: 0.5,
   orange: 1,
   cherry: 1.5,
   grape: 2,

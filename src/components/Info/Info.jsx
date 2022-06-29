@@ -15,7 +15,7 @@ import { win } from '../../utils/win';
 import { lose } from '../../utils/lose';
 
 const Info = () => {
-  const { cylinders, isRolling } = useContext(RollContext);
+  const { cylinders, isRolling, firstTime } = useContext(RollContext);
   const [credits, setCredits] = useState(200);
   const [winAmount, setWinAmount] = useState(0);
   const [betAmount, setBetAmount] = useState(0);
@@ -26,18 +26,28 @@ const Info = () => {
     const cylindersArr = getSymbolsArr(cylinders);
     const winningSymbols = getWinningSymbols(cylindersArr);
 
-    if (winningSymbols && !isRolling) {
+    if (winningSymbols && !isRolling && !firstTime) {
       setWinAmount(win(winningSymbols, betAmount));
       setCredits((prevState) => (prevState += winAmount));
+    } else {
+      setWinAmount(0);
     }
 
-    if (winAmount && !isRolling) {
+    if (winAmount && !isRolling && !firstTime) {
       setText(`WIN $${winAmount}`);
     }
-    if (!winAmount && !isRolling) {
+    if (!winAmount && !isRolling && !firstTime) {
       setText(lose());
     }
-  }, [cylinders, betAmount, setText, setCredits, isRolling, winAmount]);
+  }, [
+    cylinders,
+    betAmount,
+    setText,
+    setCredits,
+    isRolling,
+    winAmount,
+    firstTime,
+  ]);
 
   return (
     <section className={classes.info}>

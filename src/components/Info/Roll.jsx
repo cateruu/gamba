@@ -8,13 +8,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
 
 const Roll = ({ credits, setCredits, betAmount, setBetIncrease, setText }) => {
-  const { isRolling, setIsRolling } = useContext(RollContext);
+  const { isRolling, setIsRolling, setFirstTime } = useContext(RollContext);
   const roll = () => {
     if (credits < betAmount) {
       setText(`Not enought credits!`);
       return;
     }
 
+    setFirstTime(false);
     setText(null);
     setIsRolling(true);
     setCredits((prevState) => prevState - betAmount);

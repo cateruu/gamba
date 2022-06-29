@@ -15,6 +15,7 @@ import { getWinningSymbols } from '../../utils/getWinningSymbols';
 const Info = () => {
   const { cylinders } = useContext(RollContext);
   const [winSymbols, setWinSymbols] = useState(null);
+  const [credits, setCredits] = useState(10000);
 
   useEffect(() => {
     const cylindersArr = getSymbolsArr(cylinders);
@@ -26,8 +27,8 @@ const Info = () => {
   return (
     <section className={classes.info}>
       <div className={classes.betContainer}>
-        <Credit />
-        <Bet />
+        <Credit credits={credits} />
+        <Bet setCredits={setCredits} />
       </div>
       <Text text={winSymbols} />
       <Roll />

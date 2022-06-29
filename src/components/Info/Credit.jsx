@@ -1,9 +1,9 @@
 import classes from './css/credit.module.css';
 
-const Credit = () => {
+const Credit = (props) => {
   return (
     <div className={classes.credit}>
-      CREDIT <span className={classes.amount}>$20000</span>
+      CREDIT <span className={classes.amount}>${props.credits}</span>
     </div>
   );
 };

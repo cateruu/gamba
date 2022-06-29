@@ -16,6 +16,8 @@ const Info = () => {
   const { cylinders } = useContext(RollContext);
   const [winSymbols, setWinSymbols] = useState(null);
   const [credits, setCredits] = useState(10000);
+  const [betAmount, setBetAmount] = useState(0);
+  const [betIncrease, setBetIncrease] = useState(0);
 
   useEffect(() => {
     const cylindersArr = getSymbolsArr(cylinders);
@@ -28,10 +30,19 @@ const Info = () => {
     <section className={classes.info}>
       <div className={classes.betContainer}>
         <Credit credits={credits} />
-        <Bet setCredits={setCredits} />
+        <Bet
+          betAmount={betAmount}
+          setBetAmount={setBetAmount}
+          betIncrease={betIncrease}
+          setBetIncrease={setBetIncrease}
+        />
       </div>
       <Text text={winSymbols} />
-      <Roll />
+      <Roll
+        setCredits={setCredits}
+        betAmount={betAmount}
+        setBetIncrease={setBetIncrease}
+      />
     </section>
   );
 };

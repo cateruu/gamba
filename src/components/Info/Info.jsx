@@ -15,9 +15,10 @@ import { getWinningSymbols } from '../../utils/getWinningSymbols';
 const Info = () => {
   const { cylinders } = useContext(RollContext);
   const [winSymbols, setWinSymbols] = useState(null);
-  const [credits, setCredits] = useState(10000);
+  const [credits, setCredits] = useState(200);
   const [betAmount, setBetAmount] = useState(0);
   const [betIncrease, setBetIncrease] = useState(0);
+  const [text, setText] = useState(null);
 
   useEffect(() => {
     const cylindersArr = getSymbolsArr(cylinders);
@@ -37,11 +38,13 @@ const Info = () => {
           setBetIncrease={setBetIncrease}
         />
       </div>
-      <Text text={winSymbols} />
+      <Text text={text} />
       <Roll
+        credits={credits}
         setCredits={setCredits}
         betAmount={betAmount}
         setBetIncrease={setBetIncrease}
+        setText={setText}
       />
     </section>
   );

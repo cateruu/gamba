@@ -5,13 +5,19 @@ import { RollContext } from '../../App';
 import classes from './css/roll.module.css';
 // font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcaseClock, faRotate } from '@fortawesome/free-solid-svg-icons';
+import { faRotate } from '@fortawesome/free-solid-svg-icons';
 
-const Roll = (props) => {
+const Roll = ({ credits, setCredits, betAmount, setBetIncrease, setText }) => {
   const { isRolling, setIsRolling } = useContext(RollContext);
   const roll = () => {
+    if (credits < betAmount) {
+      setText(`Not enought credits!`);
+      return;
+    }
+
+    setText(null);
     setIsRolling(true);
-    props.setCredits((prevState) => prevState - props.betAmount);
+    setCredits((prevState) => prevState - betAmount);
 
     setTimeout(() => setIsRolling(false), 700);
   };
@@ -19,10 +25,10 @@ const Roll = (props) => {
   const setBetAmount = (action) => {
     switch (action) {
       case '+':
-        props.setBetIncrease((prevState) => ++prevState);
+        setBetIncrease((prevState) => ++prevState);
         break;
       case '-':
-        props.setBetIncrease((prevState) => --prevState);
+        setBetIncrease((prevState) => --prevState);
         break;
       default:
         console.error('unexpected error in setting amount');

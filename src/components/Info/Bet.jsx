@@ -13,7 +13,7 @@ const Bet = ({ betAmount, setBetAmount, betIncrease, setBetIncrease }) => {
 
     setBetIncrease(betIndex);
     setBetAmount(betAmounts[betIndex]);
-  }, [betIncrease, setBetAmount]);
+  }, [betIncrease, setBetAmount, setBetIncrease]);
 
   return (
     <div className={classes.bet}>

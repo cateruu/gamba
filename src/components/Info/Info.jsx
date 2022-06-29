@@ -11,10 +11,11 @@ import Roll from './Roll';
 // utils
 import { getSymbolsArr } from '../../utils/getSymbolsArr';
 import { getWinningSymbols } from '../../utils/getWinningSymbols';
+import { win } from '../../utils/win';
+import { lose } from '../../utils/lose';
 
 const Info = () => {
-  const { cylinders } = useContext(RollContext);
-  const [winSymbols, setWinSymbols] = useState(null);
+  const { cylinders, isRolling } = useContext(RollContext);
   const [credits, setCredits] = useState(200);
   const [betAmount, setBetAmount] = useState(0);
   const [betIncrease, setBetIncrease] = useState(0);
@@ -24,8 +25,14 @@ const Info = () => {
     const cylindersArr = getSymbolsArr(cylinders);
     const winningSymbols = getWinningSymbols(cylindersArr);
 
-    setWinSymbols(winningSymbols);
-  }, [cylinders]);
+    if (winningSymbols && !isRolling) {
+      setCredits(
+        (prevState) => (prevState += win(winningSymbols, betAmount, setText))
+      );
+    } else {
+      lose(setText);
+    }
+  }, [cylinders, betAmount, setText, setCredits, isRolling]);
 
   return (
     <section className={classes.info}>

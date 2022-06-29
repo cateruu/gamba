@@ -17,6 +17,7 @@ import { lose } from '../../utils/lose';
 const Info = () => {
   const { cylinders, isRolling } = useContext(RollContext);
   const [credits, setCredits] = useState(200);
+  const [winAmount, setWinAmount] = useState(0);
   const [betAmount, setBetAmount] = useState(0);
   const [betIncrease, setBetIncrease] = useState(0);
   const [text, setText] = useState(null);
@@ -26,13 +27,17 @@ const Info = () => {
     const winningSymbols = getWinningSymbols(cylindersArr);
 
     if (winningSymbols && !isRolling) {
-      setCredits(
-        (prevState) => (prevState += win(winningSymbols, betAmount, setText))
-      );
-    } else {
-      lose(setText);
+      setWinAmount(win(winningSymbols, betAmount));
+      setCredits((prevState) => (prevState += winAmount));
     }
-  }, [cylinders, betAmount, setText, setCredits, isRolling]);
+
+    if (winAmount && !isRolling) {
+      setText(`WIN $${winAmount}`);
+    }
+    if (!winAmount && !isRolling) {
+      setText(lose());
+    }
+  }, [cylinders, betAmount, setText, setCredits, isRolling, winAmount]);
 
   return (
     <section className={classes.info}>

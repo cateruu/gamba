@@ -1,12 +1,10 @@
-export const win = (winSymbols, betAmount, setText) => {
+export const win = (winSymbols, betAmount) => {
   let winAmount = 0;
   winSymbols.forEach((symbol) => {
     if (symbol in symbolValue) {
       winAmount += betAmount * symbolValue[symbol];
     }
   });
-
-  setText(`WIN $${winAmount}`);
 
   return winAmount;
 };

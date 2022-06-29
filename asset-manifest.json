@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gamba/static/css/main.bc3066ef.css",
+    "main.js": "/gamba/static/js/main.53198a55.js",
+    "index.html": "/gamba/index.html",
+    "main.bc3066ef.css.map": "/gamba/static/css/main.bc3066ef.css.map",
+    "main.53198a55.js.map": "/gamba/static/js/main.53198a55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc3066ef.css",
+    "static/js/main.53198a55.js"
+  ]
+}

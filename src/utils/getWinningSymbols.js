@@ -1,4 +1,4 @@
-export const getSymbolsCount = (arr) => {
+export const getWinningSymbols = (arr) => {
   let symbols = {};
   for (let cylinder of arr) {
     for (let symbol of cylinder) {
@@ -10,5 +10,10 @@ export const getSymbolsCount = (arr) => {
     }
   }
 
-  return symbols;
+  let winningSymbols = [];
+  for (let [key, value] of Object.entries(symbols)) {
+    if (value === 3) winningSymbols.push(key);
+  }
+
+  return winningSymbols;
 };

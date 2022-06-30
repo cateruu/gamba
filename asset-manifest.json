@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/gamba/static/css/main.bc3066ef.css",
-    "main.js": "/gamba/static/js/main.aa217644.js",
+    "main.js": "/gamba/static/js/main.0490b2d5.js",
     "index.html": "/gamba/index.html",
     "main.bc3066ef.css.map": "/gamba/static/css/main.bc3066ef.css.map",
-    "main.aa217644.js.map": "/gamba/static/js/main.aa217644.js.map"
+    "main.0490b2d5.js.map": "/gamba/static/js/main.0490b2d5.js.map"
   },
   "entrypoints": [
     "static/css/main.bc3066ef.css",
-    "static/js/main.aa217644.js"
+    "static/js/main.0490b2d5.js"
   ]
 }

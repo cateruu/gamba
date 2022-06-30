@@ -39,7 +39,10 @@ const Roll = ({ credits, setCredits, betAmount, setBetIncrease, setText }) => {
 
   return (
     <div className={classes.container}>
-      <span className={classes.amount} onClick={() => setBetAmount('-')}>
+      <span
+        className={classes.amount}
+        onClick={() => (isRolling ? null : setBetAmount('-'))}
+      >
         -
       </span>
       <FontAwesomeIcon
@@ -47,7 +50,10 @@ const Roll = ({ credits, setCredits, betAmount, setBetIncrease, setText }) => {
         className={classes.roll}
         onClick={isRolling ? null : roll}
       />
-      <span className={classes.amount} onClick={() => setBetAmount('+')}>
+      <span
+        className={classes.amount}
+        onClick={() => (isRolling ? null : setBetAmount('+'))}
+      >
         +
       </span>
     </div>

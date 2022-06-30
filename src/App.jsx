@@ -11,12 +11,20 @@ const App = () => {
   const [firstTime, setFirstTime] = useState(true);
   const [isRolling, setIsRolling] = useState(false);
   const cylinders = [useRef(), useRef(), useRef()];
+  const newReels = useRef(false);
 
   return (
     <main className={classes.main}>
       <h1 className={classes.header}>GAMBA</h1>
       <RollContext.Provider
-        value={{ isRolling, setIsRolling, cylinders, firstTime, setFirstTime }}
+        value={{
+          isRolling,
+          setIsRolling,
+          cylinders,
+          firstTime,
+          setFirstTime,
+          newReels,
+        }}
       >
         <Slot />
         <Info />

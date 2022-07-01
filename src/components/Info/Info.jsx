@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 // context
-import { RollContext } from '../../App';
+import { RollContext } from '../Slot/Slot';
 // styles
 import classes from './css/info.module.css';
 // components
@@ -15,8 +15,8 @@ import { win } from '../../utils/win';
 import { lose } from '../../utils/lose';
 
 const Info = () => {
-  const { cylinders, isRolling, firstTime, newReels, credits, setCredits } =
-    useContext(RollContext);
+  const { cylinders, isRolling, firstTime, newReels } = useContext(RollContext);
+  const [credits, setCredits] = useState(500);
   const [winAmount, setWinAmount] = useState(0);
   const [betAmount, setBetAmount] = useState(0);
   const [betIncrease, setBetIncrease] = useState(0);

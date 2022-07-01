@@ -1,6 +1,11 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  height: 500px;
-  width: 100%;
+.header {
+  font-family: 'Iceland', sans-serif;
+  font-weight: 400;
+  font-size: 5rem;
+  color: var(--font-color-primary);
+  text-align: center;
+}
+
+.help {
+  filter: blur(5px);
 }

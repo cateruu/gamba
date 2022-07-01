@@ -1,8 +1,8 @@
 // styles
 import classes from './css/text.module.css';
 
-const Text = (props) => {
-  return <div className={classes.text}>{props.text}</div>;
+const Text = ({ text }) => {
+  return <div className={classes.text}>{text}</div>;
 };
 
 export default Text;

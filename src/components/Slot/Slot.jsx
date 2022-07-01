@@ -1,15 +1,37 @@
+import React, { useState, useRef } from 'react';
 // styles
 import classes from './css/slot.module.css';
 // components
-import Cylinder from './Cylinder';
+import Reels from './Reels';
+import Info from '../Info/Info';
+import HelpBtn from '../Help/HelpBtn';
 
-const Slot = (props) => {
+export const RollContext = React.createContext();
+
+const Slot = ({ handleClick, showHelp }) => {
+  const [firstTime, setFirstTime] = useState(true);
+  const [isRolling, setIsRolling] = useState(false);
+  const cylinders = [useRef(), useRef(), useRef()];
+  const newReels = useRef(false);
+
   return (
-    <section className={classes.container}>
-      <Cylinder id={0} />
-      <Cylinder id={1} />
-      <Cylinder id={2} />
-    </section>
+    <div className={`${showHelp ? classes.help : null}`}>
+      <HelpBtn handleClick={handleClick} />
+      <h1 className={classes.header}>GAMBA</h1>
+      <RollContext.Provider
+        value={{
+          isRolling,
+          setIsRolling,
+          cylinders,
+          firstTime,
+          setFirstTime,
+          newReels,
+        }}
+      >
+        <Reels />
+        <Info />
+      </RollContext.Provider>
+    </div>
   );
 };
 

@@ -7,19 +7,15 @@ import Slot from './components/Slot/Slot';
 
 const App = () => {
   const [showHelp, setShowHelp] = useState(false);
-  const [credits, setCredits] = useState(200);
 
   const help = () => {
     setShowHelp((prevState) => !prevState);
+    console.log(showHelp);
   };
 
   return (
     <main className={classes.main}>
-      {showHelp ? (
-        <Help handleClick={help} />
-      ) : (
-        <Slot handleClick={help} credits={credits} setCredits={setCredits} />
-      )}
+      {showHelp ? <Help handleClick={help} /> : <Slot handleClick={help} />}
     </main>
   );
 };

@@ -2,46 +2,55 @@
   {
     "id": 1,
     "name": "apple",
-    "path": "images/apple.svg"
+    "path": "images/apple.svg",
+    "value": "0.25"
   },
   {
     "id": 2,
-    "name": "cherry",
-    "path": "images/cherry.svg"
+    "name": "orange",
+    "path": "images/orange.svg",
+    "value": "0.75"
   },
   {
     "id": 3,
-    "name": "diamond",
-    "path": "images/diamond.svg"
+    "name": "cherry",
+    "path": "images/cherry.svg",
+    "value": "1"
   },
   {
     "id": 4,
     "name": "grape",
-    "path": "images/grape.svg"
+    "path": "images/grape.svg",
+    "value": "1.5"
   },
   {
     "id": 5,
-    "name": "heart",
-    "path": "images/heart.svg"
+    "name": "strawberry",
+    "path": "images/strawberry.svg",
+    "value": "2"
   },
   {
     "id": 6,
-    "name": "orange",
-    "path": "images/orange.svg"
+    "name": "watermelon",
+    "path": "images/watermelon.svg",
+    "value": "2.5"
   },
   {
     "id": 7,
-    "name": "seven",
-    "path": "images/seven.svg"
+    "name": "heart",
+    "path": "images/heart.svg",
+    "value": "3"
   },
   {
     "id": 8,
-    "name": "strawberry",
-    "path": "images/strawberry.svg"
+    "name": "diamond",
+    "path": "images/diamond.svg",
+    "value": "5"
   },
   {
     "id": 9,
-    "name": "watermelon",
-    "path": "images/watermelon.svg"
+    "name": "seven",
+    "path": "images/seven.svg",
+    "value": "10"
   }
 ]

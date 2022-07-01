@@ -1,5 +1,5 @@
 .container {
-  height: 60vh;
+  height: 600px;
   width: 600px;
   position: absolute;
   top: 50%;
@@ -9,11 +9,9 @@
   border: 1px solid var(--border-color-light);
   border-radius: 10px;
   z-index: 100;
-}
-
-.header {
-  text-align: center;
-  color: var(--font-color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .close {
@@ -23,4 +21,66 @@
   right: 5px;
   font-size: 1.4rem;
   cursor: pointer;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.sections::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sections::-webkit-scrollbar-thumb {
+  background-color: var(--border-color-light);
+  border-radius: 5px;
+}
+
+.header {
+  color: var(--font-color-primary);
+}
+
+.section {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sub {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--font-color-primary);
+  margin-bottom: 5px;
+}
+
+.text {
+  color: var(--font-color-text);
+}
+
+.example {
+  margin-top: 5px;
+  width: 40%;
+}
+
+.symbols {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 20px;
+}
+
+.image {
+  width: 70px;
+  margin-right: 5px;
+}
+
+.symbol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--font-color-text);
+  font-size: 1.2rem;
 }

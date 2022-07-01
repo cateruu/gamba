@@ -7,15 +7,22 @@ import Help from './components/Help/Help';
 
 const App = () => {
   const [showHelp, setShowHelp] = useState(false);
+  const [firstTime, setFirstTime] = useState(true);
 
   const help = () => {
     setShowHelp((prevState) => !prevState);
+    setFirstTime(true);
   };
 
   return (
     <main className={`${classes.main} ${showHelp ? classes.help : null}`}>
       {showHelp && <Help handleClick={help} />}
-      <Slot handleClick={help} showHelp={showHelp} />
+      <Slot
+        handleClick={help}
+        showHelp={showHelp}
+        firstTime={firstTime}
+        setFirstTime={setFirstTime}
+      />
     </main>
   );
 };

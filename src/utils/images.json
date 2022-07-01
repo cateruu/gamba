@@ -33,5 +33,15 @@
     "id": 7,
     "name": "seven",
     "path": "images/seven.svg"
+  },
+  {
+    "id": 8,
+    "name": "strawberry",
+    "path": "images/strawberry.svg"
+  },
+  {
+    "id": 9,
+    "name": "watermelon",
+    "path": "images/watermelon.svg"
   }
 ]

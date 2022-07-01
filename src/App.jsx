@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 // styles
 import classes from './css/app.module.css';
 // components

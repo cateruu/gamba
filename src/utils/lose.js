@@ -4,4 +4,11 @@ export const lose = () => {
   return message[randomNumber];
 };
 
-const message = ['Better luck next time!', 'So close!', 'Ayy caramba'];
+const message = [
+  'Better luck next time!',
+  'So close!',
+  'Ayy caramba',
+  'Sadge',
+  'unlucku',
+  'jasperSad',
+];

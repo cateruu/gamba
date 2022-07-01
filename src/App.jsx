@@ -8,7 +8,16 @@ import Slot from './components/Slot/Slot';
 const App = () => {
   const [showHelp, setShowHelp] = useState(false);
 
-  return <main className={classes.main}>{showHelp ? <Help /> : <Slot />}</main>;
+  const help = () => {
+    setShowHelp((prevState) => !prevState);
+    console.log(showHelp);
+  };
+
+  return (
+    <main className={classes.main}>
+      {showHelp ? <Help handleClick={help} /> : <Slot handleClick={help} />}
+    </main>
+  );
 };
 
 export default App;

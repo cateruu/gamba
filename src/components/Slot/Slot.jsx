@@ -8,7 +8,7 @@ import HelpBtn from '../Help/HelpBtn';
 
 export const RollContext = React.createContext();
 
-const Slot = () => {
+const Slot = ({ handleClick }) => {
   const [firstTime, setFirstTime] = useState(true);
   const [isRolling, setIsRolling] = useState(false);
   const cylinders = [useRef(), useRef(), useRef()];
@@ -16,7 +16,7 @@ const Slot = () => {
 
   return (
     <>
-      <HelpBtn />
+      <HelpBtn handleClick={handleClick} />
       <h1 className={classes.header}>GAMBA</h1>
       <RollContext.Provider
         value={{

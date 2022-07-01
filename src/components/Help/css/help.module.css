@@ -1,0 +1,24 @@
+.container {
+  height: 80vh;
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border-color-light);
+  border-radius: 10px;
+}
+
+.header {
+  text-align: center;
+  color: var(--font-color-primary);
+}
+
+.close {
+  color: var(--error);
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}

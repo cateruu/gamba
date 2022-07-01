@@ -16,7 +16,7 @@ const Roll = ({ credits, setCredits, betAmount, setBetIncrease, setText }) => {
     }
 
     setFirstTime(false);
-    setText(null);
+    setText({ text: '' });
     setIsRolling(true);
     setCredits((prevState) => prevState - betAmount);
 

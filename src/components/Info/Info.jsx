@@ -13,6 +13,7 @@ import { getSymbolsArr } from '../../utils/getSymbolsArr';
 import { getWinningSymbols } from '../../utils/getWinningSymbols';
 import { win } from '../../utils/win';
 import { lose } from '../../utils/lose';
+import images from '../../utils/images.json';
 
 const Info = () => {
   const { cylinders, isRolling, firstTime, newReels } = useContext(RollContext);
@@ -20,12 +21,23 @@ const Info = () => {
   const [winAmount, setWinAmount] = useState(0);
   const [betAmount, setBetAmount] = useState(0);
   const [betIncrease, setBetIncrease] = useState(0);
-  const [text, setText] = useState(null);
+  const [text, setText] = useState({
+    text: '',
+  });
 
   useEffect(() => {
     if (newReels.current) {
       const cylindersArr = getSymbolsArr(cylinders);
       const winningSymbols = getWinningSymbols(cylindersArr);
+
+      let symbolImg = [];
+      if (winningSymbols) {
+        images.forEach((image, id) => {
+          if (winningSymbols.includes(image.name)) {
+            symbolImg.push(<img key={id} src={image.path} alt={image.name} />);
+          }
+        });
+      }
 
       if (winningSymbols && !isRolling && !firstTime) {
         setWinAmount(win(winningSymbols, betAmount));
@@ -35,10 +47,15 @@ const Info = () => {
       }
 
       if (winAmount && !isRolling && !firstTime) {
-        setText(`WIN $${winAmount}`);
+        setText({
+          text: `WIN $${winAmount}`,
+          images: symbolImg,
+        });
       }
       if (!winAmount && !isRolling && !firstTime) {
-        setText(lose());
+        setText({
+          text: lose(),
+        });
       }
     }
   }, [

@@ -4,6 +4,7 @@ import classes from './css/app.module.css';
 // components
 import Slot from './components/Slot/Slot';
 import Info from './components/Info/Info';
+import HelpBtn from './components/Help/HelpBtn';
 
 export const RollContext = React.createContext();
 
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <main className={classes.main}>
+      <HelpBtn />
       <h1 className={classes.header}>GAMBA</h1>
       <RollContext.Provider
         value={{

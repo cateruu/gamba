@@ -8,7 +8,7 @@ import HelpBtn from '../Help/HelpBtn';
 
 export const RollContext = React.createContext();
 
-const Slot = ({ handleClick }) => {
+const Slot = ({ handleClick, credits, setCredits }) => {
   const [firstTime, setFirstTime] = useState(true);
   const [isRolling, setIsRolling] = useState(false);
   const cylinders = [useRef(), useRef(), useRef()];
@@ -26,6 +26,8 @@ const Slot = ({ handleClick }) => {
           firstTime,
           setFirstTime,
           newReels,
+          credits,
+          setCredits,
         }}
       >
         <Reels />

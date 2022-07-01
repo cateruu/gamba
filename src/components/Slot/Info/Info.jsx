@@ -15,8 +15,8 @@ import { win } from '../../../utils/win';
 import { lose } from '../../../utils/lose';
 
 const Info = () => {
-  const { cylinders, isRolling, firstTime, newReels } = useContext(RollContext);
-  const [credits, setCredits] = useState(200);
+  const { cylinders, isRolling, firstTime, newReels, credits, setCredits } =
+    useContext(RollContext);
   const [winAmount, setWinAmount] = useState(0);
   const [betAmount, setBetAmount] = useState(0);
   const [betIncrease, setBetIncrease] = useState(0);

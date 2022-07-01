@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 // context
-import { RollContext } from '../Slot';
+import { RollContext } from '../../App';
 // styles
 import classes from './css/roll.module.css';
 // font awesome

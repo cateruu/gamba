@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 // context
-import { RollContext } from '../Slot';
+import { RollContext } from '../../App';
 // styles
 import classes from './css/info.module.css';
 // components
@@ -9,10 +9,10 @@ import Bet from './Bet';
 import Text from './Text';
 import Roll from './Roll';
 // utils
-import { getSymbolsArr } from '../../../utils/getSymbolsArr';
-import { getWinningSymbols } from '../../../utils/getWinningSymbols';
-import { win } from '../../../utils/win';
-import { lose } from '../../../utils/lose';
+import { getSymbolsArr } from '../../utils/getSymbolsArr';
+import { getWinningSymbols } from '../../utils/getWinningSymbols';
+import { win } from '../../utils/win';
+import { lose } from '../../utils/lose';
 
 const Info = () => {
   const { cylinders, isRolling, firstTime, newReels, credits, setCredits } =

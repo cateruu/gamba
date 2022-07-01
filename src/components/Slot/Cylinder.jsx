@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 // context
-import { RollContext } from '../Slot';
+import { RollContext } from '../../App';
 // styles
-import classes from './css/reel.module.css';
+import classes from './css/cylinder.module.css';
 // utils
-import images from '../../../utils/images.json';
-import { shuffle } from '../../../utils/shuffle';
+import images from '../../utils/images.json';
+import { shuffle } from '../../utils/shuffle';
 
-const Reel = ({ id }) => {
+const Cylinder = ({ id }) => {
   const { isRolling, cylinders, newReels } = useContext(RollContext);
 
   const symbols = images.map((image, id) => {
@@ -40,4 +40,4 @@ const Reel = ({ id }) => {
   );
 };
 
-export default Reel;
+export default Cylinder;

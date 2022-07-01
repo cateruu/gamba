@@ -1,14 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 // styles
 import classes from './css/app.module.css';
 // components
+<<<<<<< HEAD
+=======
+import Help from './components/Help/Help';
+>>>>>>> parent of abfd1f1 (changes)
 import Slot from './components/Slot/Slot';
 import Info from './components/Info/Info';
 import HelpBtn from './components/Help/HelpBtn';
 
-export const RollContext = React.createContext();
-
 const App = () => {
+<<<<<<< HEAD
   const [firstTime, setFirstTime] = useState(true);
   const [isRolling, setIsRolling] = useState(false);
   const cylinders = [useRef(), useRef(), useRef()];
@@ -31,6 +34,22 @@ const App = () => {
         <Slot />
         <Info />
       </RollContext.Provider>
+=======
+  const [showHelp, setShowHelp] = useState(false);
+  const [credits, setCredits] = useState(200);
+
+  const help = () => {
+    setShowHelp((prevState) => !prevState);
+  };
+
+  return (
+    <main className={classes.main}>
+      {showHelp ? (
+        <Help handleClick={help} />
+      ) : (
+        <Slot handleClick={help} credits={credits} setCredits={setCredits} />
+      )}
+>>>>>>> parent of abfd1f1 (changes)
     </main>
   );
 };

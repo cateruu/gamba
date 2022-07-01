@@ -1,12 +1,7 @@
 .cylinder {
   height: 100%;
   width: 33%;
-  background: linear-gradient(
-    180deg,
-    #9b9b9b 0%,
-    rgba(255, 255, 255, 0.9) 50%,
-    #9b9b9b 100%
-  );
+  background: var(--bg-color-light);
   overflow: hidden;
   position: relative;
 }

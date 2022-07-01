@@ -1,7 +1,7 @@
 .button {
   position: absolute;
   top: 30px;
-  left: 10px;
+  left: 0;
   font-size: 2rem;
   color: var(--bg-color-light);
   cursor: pointer;

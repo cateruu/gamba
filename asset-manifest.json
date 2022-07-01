@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/gamba/static/css/main.bc3066ef.css",
-    "main.js": "/gamba/static/js/main.0490b2d5.js",
+    "main.css": "/gamba/static/css/main.225574e1.css",
+    "main.js": "/gamba/static/js/main.01fbf30b.js",
+    "static/media/line-example.png": "/gamba/static/media/line-example.00b02600fcf0388e31af.png",
+    "static/media/multiple-example.png": "/gamba/static/media/multiple-example.d7c5a9f5cd2df9d002f1.png",
     "index.html": "/gamba/index.html",
-    "main.bc3066ef.css.map": "/gamba/static/css/main.bc3066ef.css.map",
-    "main.0490b2d5.js.map": "/gamba/static/js/main.0490b2d5.js.map"
+    "main.225574e1.css.map": "/gamba/static/css/main.225574e1.css.map",
+    "main.01fbf30b.js.map": "/gamba/static/js/main.01fbf30b.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc3066ef.css",
-    "static/js/main.0490b2d5.js"
+    "static/css/main.225574e1.css",
+    "static/js/main.01fbf30b.js"
   ]
 }

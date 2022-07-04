@@ -14,6 +14,9 @@ import { getWinningSymbols } from '../../utils/getWinningSymbols';
 import { win } from '../../utils/win';
 import { lose } from '../../utils/lose';
 import images from '../../utils/images.json';
+import ReactHowler from 'react-howler';
+// sounds
+import winSound from '../../sounds/win.mp3';
 
 const Info = () => {
   const { cylinders, isRolling, firstTime, newReels } = useContext(RollContext);
@@ -24,8 +27,19 @@ const Info = () => {
   const [text, setText] = useState({
     text: '',
   });
+  const [playingWin, setPlayingWin] = useState(false);
+  const [playingRoll, setPlayingRoll] = useState(false);
+
+  const sound = new ReactHowler({
+    src: winSound,
+    html5: true,
+    playing: playingWin,
+    volume: 0.3,
+  });
 
   useEffect(() => {
+    setPlayingWin(false);
+    setPlayingRoll(false);
     if (newReels.current) {
       const cylindersArr = getSymbolsArr(cylinders);
       const winningSymbols = getWinningSymbols(cylindersArr);
@@ -51,6 +65,7 @@ const Info = () => {
           text: `WIN $${winAmount}`,
           images: symbolImg,
         });
+        setPlayingWin(true);
       }
       if (!winAmount && !isRolling && !firstTime) {
         setText({
@@ -74,25 +89,31 @@ const Info = () => {
   }, [winAmount, newReels]);
 
   return (
-    <section className={classes.info}>
-      <div className={classes.betContainer}>
-        <Credit credits={credits} />
-        <Bet
+    <>
+      <ReactHowler {...sound.props} />
+      <section className={classes.info}>
+        <div className={classes.betContainer}>
+          <Credit credits={credits} />
+          <Bet
+            betAmount={betAmount}
+            setBetAmount={setBetAmount}
+            betIncrease={betIncrease}
+            setBetIncrease={setBetIncrease}
+          />
+        </div>
+        <Text text={text} />
+        <Roll
+          credits={credits}
+          setCredits={setCredits}
           betAmount={betAmount}
-          setBetAmount={setBetAmount}
-          betIncrease={betIncrease}
           setBetIncrease={setBetIncrease}
+          setText={setText}
+          playingRoll={playingRoll}
+          setPlayingRoll={setPlayingRoll}
+          setPlayingWin={setPlayingWin}
         />
-      </div>
-      <Text text={text} />
-      <Roll
-        credits={credits}
-        setCredits={setCredits}
-        betAmount={betAmount}
-        setBetIncrease={setBetIncrease}
-        setText={setText}
-      />
-    </section>
+      </section>
+    </>
   );
 };
 

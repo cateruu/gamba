@@ -22,7 +22,7 @@
 }
 
 .roll {
-  animation: roll 0.8s;
+  animation: roll 1.1s;
 }
 
 @keyframes roll {

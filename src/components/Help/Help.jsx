@@ -53,7 +53,7 @@ const Help = ({ handleClick }) => {
             />
           </div>
           <div className={classes.section}>
-            <h3 className={classes.sub}>SYMBOL VALUES</h3>
+            <h3 className={classes.sub}>SYMBOLS VALUE</h3>
             <div className={classes.symbols}>{symbolElements}</div>
           </div>
         </div>
